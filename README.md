@@ -1,2 +1,2 @@
 # Return to Sender
-Application that facilitates mail return to sender
+Application that facilitates mail return to sender.
