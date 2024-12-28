@@ -6,19 +6,35 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack{
+                PhotoPickerView()
+            }
+            /*VStack {
+                Text("Scan a document")
+                    .font(.title)
+                    .padding()
+                DocumentScannerView()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+            }*/
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
+/*
+     struct ContentView_Previews: PreviewProvider {
+     static var previews: some View {
+     ContentView()
+     }
+     }
+*/
