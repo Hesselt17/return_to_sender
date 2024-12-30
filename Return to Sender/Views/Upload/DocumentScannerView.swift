@@ -20,7 +20,7 @@ struct DocumentScannerView: UIViewControllerRepresentable {
         ]
     )
     var scannerViewController: DataScannerViewController = DataScannerViewController(
-        recognizedDataTypes: [DocumentScannerView.textDataType, .barcode()],
+        recognizedDataTypes: [DocumentScannerView.textDataType],
         qualityLevel: .accurate,
         recognizesMultipleItems: false,
         isHighFrameRateTrackingEnabled: false,
@@ -110,6 +110,8 @@ struct DocumentScannerView: UIViewControllerRepresentable {
             case .text(let text):
                 print("Text Observation - \(text.observation)")
                 print("Text transcript - \(text.transcript)")
+                let scannedText = text.transcript
+                print ("scanned text:", scannedText)
                 let frame = getRoundBoxFrame(item: item)
                 // Adding the round box overlay to detected text
                 addRoundBoxToItem(frame: frame, text: text.transcript, item: item)
